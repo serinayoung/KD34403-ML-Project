@@ -141,4 +141,9 @@ X_test[numeric_cols] = scaler.transform(X_test[numeric_cols])
 
 print("Scaled numeric columns: tenure, MonthlyCharges, TotalCharges")
 
+# Save cleaned data
+df.to_csv("data/cleaned_data.csv", index=False)
+print("\nCleaned dataset saved as cleaned_data.csv")
+
 print("\nMilestone 1 pipeline completed successfully.")
+
