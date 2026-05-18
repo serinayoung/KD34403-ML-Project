@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 #Setup
-
 RANDOM_STATE = 42
 np.random.seed(RANDOM_STATE)
 
