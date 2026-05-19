@@ -6,6 +6,16 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    precision_score,
+    recall_score,
+    f1_score,
+    roc_auc_score,
+    roc_curve
+)
 
 #Setup
 RANDOM_STATE = 42
@@ -147,7 +157,7 @@ print("\nCleaned dataset saved as cleaned_data.csv")
 
 print("\nMilestone 1 pipeline completed successfully.")
 
-<<<<<<< HEAD
+
 # =====================================================
 # MODEL TRAINING
 # =====================================================
@@ -171,7 +181,7 @@ print(accuracy_score(y_test, y_pred))
 
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
-=======
+
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
@@ -216,7 +226,95 @@ plt.ylabel("Actual")
 plt.show()
 print("\nModel is regularized using max_depth, min_samples_split, and min_samples_leaf to reduce overfitting.")
 
+# FINAL OPTIMIZED MODEL
 
+final_model = DecisionTreeClassifier(
+    max_depth=3,
+    min_samples_split=10,
+    min_samples_leaf=5,
+    random_state=42
+)
 
+# Train finalized model
+final_model.fit(X_train, y_train)
 
->>>>>>> 83df422a68130ad8217884c3aef436537d1acca3
+print("\nFinal optimized model trained successfully.")
+
+# TEST MODEL ON NEW DATA (TEST SET)
+
+y_pred = final_model.predict(X_test)
+
+# Probability prediction for ROC-AUC
+y_prob = final_model.predict_proba(X_test)[:, 1]
+
+# MODEL EVALUATION METRICS
+
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+roc_auc = roc_auc_score(y_test, y_prob)
+
+print("\n====================================")
+print("FINAL MODEL EVALUATION RESULTS")
+print("====================================")
+
+print(f"Accuracy  : {accuracy:.4f}")
+print(f"Precision : {precision:.4f}")
+print(f"Recall    : {recall:.4f}")
+print(f"F1-Score  : {f1:.4f}")
+print(f"ROC-AUC   : {roc_auc:.4f}")
+
+# CLASSIFICATION REPORT
+
+print("\nClassification Report:\n")
+print(classification_report(y_test, y_pred))
+
+# CONFUSION MATRIX
+
+cm = confusion_matrix(y_test, y_pred)
+
+plt.figure(figsize=(6, 5))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+
+plt.title("Confusion Matrix - Final Model")
+plt.xlabel("Predicted Label")
+plt.ylabel("Actual Label")
+
+plt.tight_layout()
+plt.show()
+
+# ROC CURVE
+
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+
+plt.figure(figsize=(6, 5))
+plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.4f}")
+
+plt.plot([0, 1], [0, 1], linestyle="--")
+
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve - Final Model")
+
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# ERROR ANALYSIS
+
+print("\n====================================")
+print("ERROR ANALYSIS")
+print("====================================")
+
+# False Positives
+false_positive = ((y_test == 0) & (y_pred == 1)).sum()
+
+# False Negatives
+false_negative = ((y_test == 1) & (y_pred == 0)).sum()
+
+print(f"False Positives : {false_positive}")
+print(f"False Negatives : {false_negative}")
+
+print("\nAll pipelines completed successfully")
+
