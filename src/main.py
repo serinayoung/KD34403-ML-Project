@@ -55,6 +55,15 @@ print(df.dtypes)
 print("\nMissing values:")
 print(df.isnull().sum())
 
+# ============================================================
+# MMILESTONE 1 - DATA PIPELINE
+# DATA CLEANING & PREPROCESSING
+# >> Contributor: Charmaine Chia Yun Shan (BI23110106)
+# ============================================================
+
+print("\nMILESTONE 1 — DATA PIPELINE")
+print("=" * 50)
+
 # Basic EDA
 print("\nEXPLORATORY DATA ANALYSIS")
 print("-" * 50)
@@ -111,7 +120,6 @@ print(f"Rows after dropping missing values: {after_rows}")
 print(f"Rows removed: {before_rows - after_rows}")
 
 
-#Data Preprocessing
 print("\nDATA PREPROCESSING")
 print("-" * 50)
 
@@ -157,27 +165,34 @@ print("\nCleaned dataset saved as cleaned_data.csv")
 
 print("\nMilestone 1 pipeline completed successfully.")
 
+# ============================================================
+# MILESTONE 2 - ARCHITECTURE LOGIC
+# DECISION TREE ARCHITECTURE
+# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
+# ============================================================
 
-# =====================================================
-# MODEL TRAINING
-# =====================================================
-print("\nMODEL TRAINING")
+print("\nMILESTONE 2 — ARCHITECTURE LOGIC")
 print("=" * 50)
 
-# Train Decision Tree model
+#Initialize Decision Tree model
 model = DecisionTreeClassifier(
     max_depth=5,
     random_state=42
 )
 
+print("\nDecision Tree Model Initialized.")
+
+print("\nWhy Decision Tree?")
+print("- Suitable for classification problems")
+print("- Handles categorical and numerical data")
+print("- Easy to interpret and visualize")
+print("- Effective for customer churn prediction")
+
+# Fit model for visualization purpose
+
 model.fit(X_train, y_train)
 
-# ============================================================
-# DECISION TREE VISUALIZATION
-# Milestone 2: Architecture Logic
-# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
-# ============================================================
-
+#Decision Tree Visualization
 plt.figure(figsize=(25, 12))
 
 plot_tree(
@@ -201,18 +216,30 @@ plt.savefig(
 plt.show()
 
 print("\nDecision Tree Visualization Generated Successfully.")
-
-# Predictions
-y_pred = model.predict(X_test)
-
-# Evaluation
-print("\nModel Accuracy:")
-print(accuracy_score(y_test, y_pred))
+print("\nMilestone 2 completed successfully.")
 
 # ============================================================
-# CLASSIFICATION REPORT
+# MILESTONE 3 — MODEL TRAINING
+# TRAINING & PERFORMANCE METRICS
 # Contributor: Yusrina binti Mohammad Yuseri (BI23110273)
 # ============================================================
+
+print("\nMILESTONE 3 - MODEL TRAINING")
+print("=" * 50)
+
+# Predictions
+
+y_pred = model.predict(X_test)
+
+# Model Accuracy
+accuracy = accuracy_score(
+    y_test,
+    y_pred
+)
+
+print(f"\nModel Accuracy: {accuracy:.4f}")
+
+# Classifiaction Report
 print("\nClassification Report:")
 print("=" * 50)
 
@@ -236,13 +263,13 @@ plt.ylabel("Actual")
 
 plt.show()
 
-print("\nModel training completed successfully.")
+print("\nMilestone 3 completed successfully.")
 
 # ============================================================
 # MODEL OPTIMIZATION
 # Contributor: Esther Christine (BI23110060)
 # ============================================================
-print("\nMODEL OPTIMIZATION")
+print("\nMILESTONE 4MODEL OPTIMIZATION")
 print("=" * 50)
 
 # Train optimized model
@@ -267,10 +294,11 @@ print("\n=== Regularized Decision Tree ===")
 print(f"Training Accuracy: {train_accuracy:.4f}")
 print(f"Test Accuracy: {test_accuracy:.4f}")
 
+# Classification Report
 print("\nClassification Report:\n")
 print(classification_report(y_test, y_test_pred))
 
-# Confusion matrix
+# Optimized Confusion matrix
 cm = confusion_matrix(y_test, y_test_pred)
 
 plt.figure()
@@ -280,9 +308,14 @@ plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.show()
 print("\nModel is regularized using max_depth, min_samples_split, and min_samples_leaf to reduce overfitting.")
+print("\nMilestone 4 completed successfully.")
 
-# FINAL MODEL EVALUATION
-print("\nFINAL MODEL EVALUATION")
+# ============================================================
+# MILESTONE 5 — FINAL MODEL EVALUATION
+# Contributor: Nurnisriza binti De Afendi (BI23110047)
+# ============================================================
+
+print("\nMILESTONE 5 - FINAL MODEL EVALUATION")
 print("=" * 50)
 
 final_model = DecisionTreeClassifier(
