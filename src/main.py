@@ -5,6 +5,7 @@ import seaborn as sns
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.tree import DecisionTreeClassifier
 
 #Setup
 RANDOM_STATE = 42
@@ -146,3 +147,26 @@ print("\nCleaned dataset saved as cleaned_data.csv")
 
 print("\nMilestone 1 pipeline completed successfully.")
 
+# =====================================================
+# MODEL TRAINING
+# =====================================================
+print("\nMODEL TRAINING")
+print("=" * 50)
+
+# Train Decision Tree model
+model = DecisionTreeClassifier(
+    max_depth=5,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+# Predictions
+y_pred = model.predict(X_test)
+
+# Evaluation
+print("\nModel Accuracy:")
+print(accuracy_score(y_test, y_pred))
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred))
