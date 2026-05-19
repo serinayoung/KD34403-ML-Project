@@ -207,7 +207,7 @@ plt.show()
 
 print("\nModel training completed successfully.")
 
-
+# >> Contributor: Esther Christine (BI23110060)
 # MODEL OPTIMIZATION 
 print("\nMODEL OPTIMIZATION")
 print("=" * 50)
