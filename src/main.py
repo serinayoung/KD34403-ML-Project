@@ -179,8 +179,33 @@ y_pred = model.predict(X_test)
 print("\nModel Accuracy:")
 print(accuracy_score(y_test, y_pred))
 
+# >> Contributor: Yusrina binti Mohammad Yuseri (BI23110273)
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred))
+
+# Confusion Matrix
+cm = confusion_matrix(y_test, y_pred)
+
+plt.figure()
+
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt="d",
+    cmap="Blues"
+)
+
+plt.title("Confusion Matrix - Model Training")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+
+plt.show()
+
+print("\nModel training completed successfully.")
+
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
