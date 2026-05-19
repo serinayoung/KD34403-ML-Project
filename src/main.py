@@ -160,6 +160,7 @@ print("\nMilestone 1 pipeline completed successfully.")
 
 # =====================================================
 # MODEL TRAINING
+# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
 # =====================================================
 print("\nMODEL TRAINING")
 print("=" * 50)
