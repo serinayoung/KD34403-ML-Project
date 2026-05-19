@@ -226,7 +226,9 @@ plt.ylabel("Actual")
 plt.show()
 print("\nModel is regularized using max_depth, min_samples_split, and min_samples_leaf to reduce overfitting.")
 
-# FINAL OPTIMIZED MODEL
+# FINAL MODEL EVALUATION
+print("\nFINAL MODEL EVALUATION")
+print("=" * 50)
 
 final_model = DecisionTreeClassifier(
     max_depth=3,
