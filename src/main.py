@@ -160,8 +160,8 @@ print("\nMilestone 1 pipeline completed successfully.")
 
 # =====================================================
 # MODEL TRAINING
-# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
 # =====================================================
+# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
 print("\nMODEL TRAINING")
 print("=" * 50)
 
@@ -206,10 +206,6 @@ plt.ylabel("Actual")
 plt.show()
 
 print("\nModel training completed successfully.")
-
-
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 
 # MODEL OPTIMIZATION 
