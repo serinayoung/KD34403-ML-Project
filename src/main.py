@@ -188,7 +188,6 @@ plt.title("Confusion Matrix - Optimized Model")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.show()
-
 print("\nModel is regularized using max_depth, min_samples_split, and min_samples_leaf to reduce overfitting.")
 
 
