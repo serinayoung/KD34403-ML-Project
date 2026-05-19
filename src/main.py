@@ -161,7 +161,6 @@ print("\nMilestone 1 pipeline completed successfully.")
 # =====================================================
 # MODEL TRAINING
 # =====================================================
-# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
 print("\nMODEL TRAINING")
 print("=" * 50)
 
@@ -175,20 +174,23 @@ model.fit(X_train, y_train)
 
 # ============================================================
 # DECISION TREE VISUALIZATION
+# Milestone 2: Architecture Logic
+# >> Contributor: Nurshurayani binti Samsudin (BI23110065)
 # ============================================================
 
 plt.figure(figsize=(25, 12))
 
 plot_tree(
-    optimized_model,
+    model,
     filled=True,
     feature_names=X.columns,
     class_names=["No Churn", "Churn"],
     rounded=True,
-    fontsize=10
+    fontsize=6,
+    max_depth=3
 )
 
-plt.title("Regularized Decision Tree Visualization")
+plt.title("Decision Tree Architecture")
 
 plt.savefig(
     "decision_tree_visualization.png",
