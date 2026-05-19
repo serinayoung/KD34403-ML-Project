@@ -193,7 +193,7 @@ print("- Effective for customer churn prediction")
 model.fit(X_train, y_train)
 
 #Decision Tree Visualization
-plt.figure(figsize=(25, 12))
+plt.figure(figsize=(16, 8))
 
 plot_tree(
     model,
@@ -201,16 +201,16 @@ plot_tree(
     feature_names=X.columns,
     class_names=["No Churn", "Churn"],
     rounded=True,
-    fontsize=6,
-    max_depth=3
+    fontsize=5,
+    max_depth=2
 )
 
 plt.title("Decision Tree Architecture")
+plt.tight_layout()
 
 plt.savefig(
     "decision_tree_visualization.png",
-    dpi=300,
-    bbox_inches="tight"
+    dpi=150,
 )
 
 plt.show()
@@ -406,5 +406,16 @@ false_negative = ((y_test == 1) & (y_pred == 0)).sum()
 print(f"False Positives : {false_positive}")
 print(f"False Negatives : {false_negative}")
 
-print("\nAll pipelines completed successfully")
+# Final Conclusion
+print("\nFINAL CONCLUSION")
+print("=" * 50)
+
+print("The regularized Decision Tree model successfully")
+print("predicts customer churn using customer behavior")
+print("and subscription-related features.")
+
+print("\nRegularization reduced overfitting")
+print("and improved generalization performance.")
+
+print("\nAll milestones completed successfully.")
 
