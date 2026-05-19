@@ -147,6 +147,7 @@ print("\nCleaned dataset saved as cleaned_data.csv")
 
 print("\nMilestone 1 pipeline completed successfully.")
 
+<<<<<<< HEAD
 # =====================================================
 # MODEL TRAINING
 # =====================================================
@@ -170,3 +171,52 @@ print(accuracy_score(y_test, y_pred))
 
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
+=======
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+
+# MODEL OPTIMIZATION 
+print("\nMODEL OPTIMIZATION")
+print("=" * 50)
+
+# Train optimized model
+optimized_model = DecisionTreeClassifier(
+    max_depth=3,
+    min_samples_split=10,
+    min_samples_leaf=5,
+    random_state=42
+)
+
+optimized_model.fit(X_train, y_train)
+
+# Training accuracy
+y_train_pred = optimized_model.predict(X_train)
+train_accuracy = accuracy_score(y_train, y_train_pred)
+
+# Testing accuracy
+y_test_pred = optimized_model.predict(X_test)
+test_accuracy = accuracy_score(y_test, y_test_pred)
+
+print("\n=== Regularized Decision Tree ===")
+print(f"Training Accuracy: {train_accuracy:.4f}")
+print(f"Test Accuracy: {test_accuracy:.4f}")
+
+print("\nClassification Report:\n")
+print(classification_report(y_test, y_test_pred))
+
+# Confusion matrix
+cm = confusion_matrix(y_test, y_test_pred)
+
+plt.figure()
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+plt.title("Confusion Matrix - Optimized Model")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.show()
+print("\nModel is regularized using max_depth, min_samples_split, and min_samples_leaf to reduce overfitting.")
+
+
+
+
+>>>>>>> 83df422a68130ad8217884c3aef436537d1acca3
