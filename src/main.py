@@ -5,7 +5,7 @@ import seaborn as sns
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
@@ -173,6 +173,33 @@ model = DecisionTreeClassifier(
 
 model.fit(X_train, y_train)
 
+# ============================================================
+# DECISION TREE VISUALIZATION
+# ============================================================
+
+plt.figure(figsize=(25, 12))
+
+plot_tree(
+    optimized_model,
+    filled=True,
+    feature_names=X.columns,
+    class_names=["No Churn", "Churn"],
+    rounded=True,
+    fontsize=10
+)
+
+plt.title("Regularized Decision Tree Visualization")
+
+plt.savefig(
+    "decision_tree_visualization.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+plt.show()
+
+print("\nDecision Tree Visualization Generated Successfully.")
+
 # Predictions
 y_pred = model.predict(X_test)
 
@@ -180,11 +207,13 @@ y_pred = model.predict(X_test)
 print("\nModel Accuracy:")
 print(accuracy_score(y_test, y_pred))
 
-# >> Contributor: Yusrina binti Mohammad Yuseri (BI23110273)
+# ============================================================
+# CLASSIFICATION REPORT
+# Contributor: Yusrina binti Mohammad Yuseri (BI23110273)
+# ============================================================
 print("\nClassification Report:")
-print(classification_report(y_test, y_pred))
+print("=" * 50)
 
-print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
 # Confusion Matrix
@@ -207,8 +236,10 @@ plt.show()
 
 print("\nModel training completed successfully.")
 
-# >> Contributor: Esther Christine (BI23110060)
-# MODEL OPTIMIZATION 
+# ============================================================
+# MODEL OPTIMIZATION
+# Contributor: Esther Christine (BI23110060)
+# ============================================================
 print("\nMODEL OPTIMIZATION")
 print("=" * 50)
 
