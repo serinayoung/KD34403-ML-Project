@@ -100,7 +100,7 @@ Tasks:
 
 ## Milestone 4 — Model Optimization
 Contributor:
-- Esther Christine (BI23110060)
+- Esther Christine Jude Valentine (BI23110060)
 
 Tasks:
 - Decision Tree regularization

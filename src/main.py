@@ -267,7 +267,7 @@ print("\nMilestone 3 completed successfully.")
 
 # ============================================================
 # MODEL OPTIMIZATION
-# Contributor: Esther Christine (BI23110060)
+# Contributor: Esther Christine Jude Valentine (BI23110060)
 # ============================================================
 print("\nMILESTONE 4MODEL OPTIMIZATION")
 print("=" * 50)
