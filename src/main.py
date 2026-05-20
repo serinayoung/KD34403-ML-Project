@@ -56,7 +56,7 @@ print("\nMissing values:")
 print(df.isnull().sum())
 
 # ============================================================
-# MMILESTONE 1 - DATA PIPELINE
+# MILESTONE 1 - DATA PIPELINE
 # DATA CLEANING & PREPROCESSING
 # >> Contributor: Charmaine Chia Yun Shan (BI23110106)
 # ============================================================
