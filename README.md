@@ -1,4 +1,5 @@
 # Customer Churn Prediction Using Decision Tree
+# GROUP 5
 
 ## Project Overview
 
@@ -205,9 +206,3 @@ The program will generate:
 The optimized Decision Tree model successfully predicts customer churn using customer behavior and subscription-related features.
 
 Regularization techniques reduced overfitting and improved the model’s generalization performance.
-
----
-
-# Group 5
-
-KD34403 Machine Learning for Data Science Project Group
