@@ -190,10 +190,10 @@ Run:
 # Expected Outputs
 
 The program will generate:
--Printed logs for each milestone (EDA, cleaning, training, optimization, evaluation).
--Saved plots: churn_distribution.png, tenure_distribution.png, monthlycharges_distribution.png, decision_tree_visualization.png.
--Confusion matrix and ROC curve plots.
--Final metrics: Accuracy, Precision, Recall, F1, ROC‑AUC.
+- Printed logs for each milestone (EDA, cleaning, training, optimization, evaluation).
+- Saved plots: churn_distribution.png, tenure_distribution.png, monthlycharges_distribution.png, decision_tree_visualization.png.
+- Confusion matrix and ROC curve plots.
+- Final metrics: Accuracy, Precision, Recall, F1, ROC‑AUC.
 
 ---
 
