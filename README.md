@@ -156,27 +156,28 @@ https://colab.research.google.com
 
 ---
 
-## Step 2 — Upload Project Files
-
-Upload:
-- `src/main.py`
-- `data/Telco_Customer_Churn.csv`
-
-OR upload the full project ZIP file.
-
----
-
-## Step 3 — Install Required Libraries
+## Step 2 — Clone the repository
 
 Run:
 
 ```python
-!pip install pandas numpy matplotlib seaborn scikit-learn
+!git clone https://github.com/serinayoung/KD34403-ML-Project.git
+%cd KD34403-ML-Project
 ```
 
 ---
 
-## Step 4 — Run the Project
+## Step 3 — Install dependencies
+
+Run:
+
+```python
+!pip install -r requirements.txt
+```
+
+---
+
+## Step 4 — Run the main pipeline
 
 Run:
 
@@ -189,15 +190,10 @@ Run:
 # Expected Outputs
 
 The program will generate:
-- Churn distribution graph
-- Tenure distribution graph
-- Monthly charges distribution graph
-- Decision Tree visualization
-- Confusion matrices
-- ROC Curve
-- Classification reports
-- Accuracy metrics
-- Error analysis
+- Printed logs for each milestone (EDA, cleaning, training, optimization, evaluation).
+- Saved plots: churn_distribution.png, tenure_distribution.png, monthlycharges_distribution.png, decision_tree_visualization.png.
+- Confusion matrix and ROC curve plots.
+- Final metrics: Accuracy, Precision, Recall, F1, ROC‑AUC.
 
 ---
 
